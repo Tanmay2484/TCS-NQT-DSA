@@ -1,0 +1,14 @@
+//party question: in a party where two arrays there are one exit and one entrance array count the maximum people present in the party
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n=5,maxi=INT_MIN,curr=0;
+    int ent[n]={7,0,5,1,3},ext[n]={1,2,1,3,4};
+    for(int i=0;i<n;i++){
+        curr+=ent[i]-ext[i];
+        if(maxi<curr)
+            maxi=curr;
+    }
+    cout<<maxi;
+}
