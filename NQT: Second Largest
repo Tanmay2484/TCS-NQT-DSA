@@ -1,0 +1,17 @@
+//second largest element from the array
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int arr[6]={2,5,6,1,9,7},second,first=INT_MIN;
+    for(int i=0;i<6;i++){
+        if(first<arr[i]){
+           second=first;
+            first=arr[i];
+           
+        }
+        else if(second<arr[i]){
+            second=arr[i];
+        }
+    }
+    cout<<second;
+}
