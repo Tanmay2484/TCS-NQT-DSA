@@ -1,0 +1,20 @@
+toggle the binary to decimal
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int a=10,p,ans=0;
+    string temp="";
+    while(a!=0){
+        temp+=to_string(a%2);
+        a/=2;
+    }
+    reverse(temp.begin(),temp.end());
+     int i=0;
+     p=stoi(temp);
+     while(p!=0){
+         int rem=!(p%10);      
+        ans+=rem*pow(2,i++);
+         p/=10;
+     }
+    cout<<ans;
+}
