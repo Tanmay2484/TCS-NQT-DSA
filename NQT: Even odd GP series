@@ -1,0 +1,19 @@
+even odd GP series
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int n,ans;
+  cin>>n;
+  
+  if(n%2==1){
+      ans=pow(2,(n-1)/2);
+  }
+  else{
+      ans=pow(3,(n-2)/2);
+  }
+  cout<<ans;
+
+    return 0;
+}
