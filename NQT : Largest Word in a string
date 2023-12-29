@@ -1,7 +1,27 @@
 NQT : Largest Word in a string
 #include <bits/stdc++.h>
 using namespace std;
+/* ---Trick code ---
+#include <bits/stdc++.h>
+using namespace std;
 
+int main()
+{
+   string s,temp="",check;
+getline(cin,s);
+istringstream ss(s);
+int m=0;
+while(ss){
+   string w;
+  ss>>w;
+  if(w==" ") break;
+  m=max(m,(int)w.length());
+}
+cout<<m;
+
+}
+
+*/
 int main()
 {
    string s,temp="",check;
