@@ -1,0 +1,17 @@
+//NQT : Integer number remainder 
+//Given two integer s1=1233736889898983 s2=98 s1 is a huge number thats why we need to divide like old process with the help of carry 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  string s1,s2;
+  cin>>s1>>s2;
+  int carry=0;
+  for(int i=0;i<s1.size();i+=s2.length()){
+     carry=pow(10,s2.length())*carry+stoi(s1.substr(i,s2.length()));//cout<<carry<<" ";
+     carry%=stoi(s2);
+  }
+  cout<<carry;
+
+}
