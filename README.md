@@ -1,1 +1,1 @@
-Here all the questions of previous tcs exam 
+Here are all the questions of previous TCS NQT exam 
