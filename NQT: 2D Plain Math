@@ -1,0 +1,55 @@
+//NQT: 2D Plain Math
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int x = 0, y = 0;
+    int distance = 10;
+    char direction = 'r'; // Start with 'r' for right
+
+    while (n > 0)
+    {
+        switch (direction)
+        {
+        case 'r':
+            x += distance;
+            distance += 10; 
+            direction = 'u';
+            break;
+
+        case 'u':
+            y += distance;
+            distance += 10; 
+            direction = 'l';
+            break;
+
+        case 'l':
+            x -= distance;
+            distance += 10; 
+            direction = 'd';
+            break;
+
+        case 'd':
+            y -= distance;
+            distance += 10; 
+            direction = 'a';
+            break;
+         case 'a':
+           x+=distance;
+           distance += 10; 
+           direction='r';
+           break;
+        }
+
+        // Move to the next step
+        n--;
+    }
+
+    cout << x << " " << y << endl;
+
+    return 0;
+}
