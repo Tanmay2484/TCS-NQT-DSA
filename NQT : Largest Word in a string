@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-   string s="hello my dear boy",temp="",check;
+   string s,temp="",check;
+   getline(cin,s);
    int ans=0;
    for(int i=0;i<s.length();i++){
        if(s[i]!=' '){
