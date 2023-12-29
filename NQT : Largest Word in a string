@@ -1,0 +1,27 @@
+NQT : Largest Word in a string
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   string s="hello my dear boy",temp="",check;
+   int ans=0;
+   for(int i=0;i<s.length();i++){
+       if(s[i]!=' '){
+           temp+=s[i];
+       }
+       else{
+           if(ans<temp.size()){
+                ans=temp.size();
+                check=temp;
+                }
+           temp="";
+       }
+   }
+   if(ans<temp.size()){
+                ans=temp.size();
+                check=temp;
+                }
+  cout<<ans<<" "<< check;
+
+}
