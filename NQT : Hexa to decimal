@@ -1,0 +1,14 @@
+// C++ program to convert octal to decimal 
+#include <bits/stdc++.h> 
+using namespace std; 
+int HexToDec(string n) { return stoi(n, 0, 17); } 
+
+int main() 
+{ 
+	string n = "23GF"; 
+	cout << HexToDec(n); 
+
+	return 0; 
+} 
+
+	// This code is contributed by rakeshsahni
