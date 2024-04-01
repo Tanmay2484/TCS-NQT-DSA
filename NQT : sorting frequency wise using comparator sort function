@@ -1,0 +1,20 @@
+//NQT : sorting frequency wise using comparator sort function 
+#include <bits/stdc++.h>
+using namespace std;
+bool comp(pair<int,int>a,pair<int,int>b){
+    return a.second<b.second;
+}
+int main() {
+    vector<pair<int,int>>v;
+    int n;cin>>n;
+    for(int i=0;i<n;i++){
+        int a,b;
+        cin>>a>>b;
+        v.push_back({a,b});
+    }
+    sort(v.begin(),v.end(),comp);
+    for(auto i:v){
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+   
+}
