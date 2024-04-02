@@ -1,0 +1,64 @@
+link: https://docs.google.com/document/d/17HOJ91g0zeMwf-y-DDV9l4wauNuoWtziCu7SSy52ad4/edit?pli=1
+#include <bits/stdc++.h>
+using namespace std;
+string customText (int key, string plainText)
+{
+    int n = plainText.size();
+    for(int i=0;i<n;i++){
+        if (plainText[i] != ' '){
+            // a to z
+                // valid
+                // carry
+            if (plainText[i] >= 'a' && plainText[i] <= 'z'){
+                if ((plainText[i]+key) <= 'z'){
+                    plainText[i] = (plainText[i]+key); // valid
+                }
+                else{
+                    plainText[i] = (plainText[i] + key - 'z' + 'a' - 1);
+                }
+            }
+            // A to Z 
+                // valid
+                // carry
+             if (plainText[i] >= 'A' && plainText[i] <= 'Z'){
+                if ((plainText[i]+key) <= 'Z'){
+                    plainText[i] =(plainText[i]+key); // valid
+                }
+                else{
+                    plainText[i] =(plainText[i] + key - 'Z' + 'A' - 1);
+                }
+            }
+            // 0 to 9
+                // valid
+                //carry
+            if (plainText[i] >= '0' && plainText[i] <= '9'){
+                if ((plainText[i]+key) < '9'){
+                    plainText[i] = (int)(plainText[i]+key); // valid
+                }
+                else{
+                    plainText[i] = (int) (plainText[i] + key - '9' + '0' - 1);
+                }
+            }
+        }
+    }
+    return plainText;
+}
+int main()
+{
+  int key;
+  string plainText;
+ // cout << "Enter your plain text : ";
+  getline(cin,plainText);
+  //cout << "Key:";
+  cin >> key;
+  if (key < 0){
+     cout << "INVALID INPUT";
+     return 0;
+  }
+  if (key == 0){
+      cout << plainText;
+      return 0;
+  }
+  cout << customText (key, plainText);
+  return 0;
+}
