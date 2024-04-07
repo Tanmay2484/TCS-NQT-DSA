@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int arr[3][3];
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            int temp;
+            cin>>arr[i][j];
+            if(temp<1 && temp>100) 
+                temp=0;
+        }
+    }
+    int avg[3]={0};
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            avg[i]+=arr[j][i];
+        }
+        avg[i]/=3;
+    }
+    int maxi=0;
+    for(int i=0;i<3;i++){
+        if(maxi<avg[i])
+            maxi=avg[i];
+    }
+    if(maxi<70){
+        cout<<"All trainees are unfit";
+        return 0;
+    }
+    else{
+        for(int i=0;i<3;i++){
+        if(avg[i]>70)
+            cout<<"Trainee Number :"<<" "<<(i+1)<<endl;
+      }
+   
+    }
+     
+
+}
