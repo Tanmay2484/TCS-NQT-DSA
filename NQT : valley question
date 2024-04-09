@@ -1,19 +1,17 @@
-#include <bits/stdc++.h>
-using namespace std;
-int main() {
-    long long int n;
-    cin>>n;
-    string s;
-    cin>>s;
-    int count=0,temp=0;
-    for(int i=0;i<n;i++){
-        if(s[i]=='D')
-            temp--;
-        else if(s[i]=='U')
+int countingValleys(int steps, string path) {
+         int count=0,temp=0;
+    for(int i=0;i<steps;i++){
+        if(path[i]=='U'){
             temp++;
-
-        if(temp==0)
-            count++;
+        }
+        else{
+           
+             if(temp==0)
+                count++; 
+             temp--;
+            
+        }
+           
     }
-    cout<<count;
+    return count;
 }
