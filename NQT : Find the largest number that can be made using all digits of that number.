@@ -1,0 +1,50 @@
+/*
+Q2. (Advance Question)
+Find the largest number that can be made using all digits of that number.
+Output format should be in non-negative Integer Only. 
+
+Example #1
+Input: 3675092
+Output: 9765320
+
+Example #2
+Input: 02856
+Output: 8652
+Here, 0 will be not consider because it lie on the front, that case we take the input as 2856.
+
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+   int n, zero = 0;
+   cin >> n;
+   vector<int> v;
+   
+   // Extract digits and count zeros
+   while (n > 0) {
+       if (n % 10 == 0) zero++;
+       else v.push_back(n % 10);
+       n /= 10;
+   }
+   
+   // Sort non-zero digits
+   sort(v.begin(), v.end(), greater<int>());
+   
+   // Construct the result string
+   string ans = "";
+   for (int i = 0; i < v.size(); i++) {
+       ans += to_string(v[i]);
+   }
+   
+   // Add zeros to the end of the result string
+   while (zero != 0) {
+       ans += '0';
+       zero--;
+   }
+   long long final_ans=stoi(ans);
+   cout <<final_ans;
+
+   return 0;
+}
