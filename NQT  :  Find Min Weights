@@ -1,0 +1,30 @@
+/*
+Q1. (Basic Question) 
+You have already given weights those are 1, 2, 5, 10, 20, 50, 100, 500, 1000.  Here user given an Input a Weight. 
+Where you have to find how many weights are required for full filling the user's given input from the given weights.
+
+Example #1
+Input: 12
+Output: 2
+
+Example #2
+Input: 93
+Output: 5
+*/
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int weights[9]={1,2,5,10,20,50,100,500,1000};
+    int w,ans=0;cin>>w;
+    while(w>0){
+        for(int i=8;i>=0;i--){
+            if(w>=weights[i]){
+                w-=weights[i];
+                ans++;
+                break;
+            }
+        }
+    }
+    cout<<ans;
+
+}
