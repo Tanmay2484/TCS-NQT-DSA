@@ -21,3 +21,25 @@ int main() {
    }
    if(check==0) cout<<"not found";
 }
+//recursion 
+#include <bits/stdc++.h>
+using namespace std;
+bool binarysearch(int arr[],int low,int high,int key){
+    if(low<=high){
+        int mid=(low+high)/2;
+         if(arr[mid]==key) return true;
+         else if(key>arr[mid]){
+            return binarysearch(arr,mid+1,high,key);
+        }
+        else{
+             return binarysearch(arr,low,mid-1,key);
+        }     
+    }
+    return false;
+}
+int main() {
+    int n=6;
+    int arr[n]={2,5,6,7,8,9},key=0;
+    int low=0,high=n-1;
+    cout<<binarysearch(arr,low,high,key);
+}
